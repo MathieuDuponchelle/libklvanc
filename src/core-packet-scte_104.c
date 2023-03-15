@@ -1292,6 +1292,12 @@ int parse_SCTE_104(struct klvanc_context_s *ctx,
 	return KLAPI_OK;
 }
 
+int klvanc_parse_SCTE_104 (struct klvanc_context_s *ctx, struct klvanc_packet_header_s *hdr,
+    struct klvanc_packet_scte_104_s **pkt)
+{
+  return parse_SCTE_104(ctx, hdr, pkt);
+}
+
 int klvanc_convert_SCTE_104_to_packetBytes(struct klvanc_context_s *ctx,
 					   const struct klvanc_packet_scte_104_s *pkt,
 					   uint8_t **bytes, uint16_t *byteCount)
